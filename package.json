@@ -1,7 +1,16 @@
 {
-  "name": "quetzal-ux",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@doamenelz/qux",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "repository": "git@github.com:doamenelz/qux.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "private": false,
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@testing-library/jest-dom": "^5.17.0",
