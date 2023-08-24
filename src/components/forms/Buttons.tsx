@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { MyButtonProps } from "./Button.types";
+import { MyButtonProps } from "./Buttons.types";
 const buttonDefaultStyles = {
   display: "inline-flex",
   alignItems: "center",
