@@ -1,6 +1,6 @@
 {
   "name": "@doamenelz/qux",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -11,6 +11,7 @@
     "registry": "https://npm.pkg.github.com"
   },
   "private": false,
+  "type": "module",
   "dependencies": {
     "@headlessui/react": "^1.7.16",
     "@testing-library/jest-dom": "^5.17.0",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rollup -c",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
@@ -48,9 +49,16 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
     "@tailwindcss/forms": "^0.5.4",
     "autoprefixer": "^9.8.6",
     "postcss-cli": "^10.1.0",
+    "rollup": "^3.28.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.35.0",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.1.6",
     "webpack": "^5.88.2"

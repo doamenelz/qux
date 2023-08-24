@@ -4,7 +4,9 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import del from "rollup-plugin-delete";
-const packageJson = require("./package.json");
+import packageJson from "./package.json" assert { type: "json" };
+
+// const packageJson = require("./package.json");
 export default {
   input: "src/index.ts",
   output: [
