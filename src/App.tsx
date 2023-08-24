@@ -1,6 +1,5 @@
-import "./index.css";
 function App() {
-  return <div className="text-primary-900">Parable</div>;
+  return <div className="">Parable</div>;
 }
 
 export default App;
