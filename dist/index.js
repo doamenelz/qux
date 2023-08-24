@@ -17,10 +17,35 @@ PERFORMANCE OF THIS SOFTWARE.
 /* global Reflect, Promise, SuppressedError, Symbol */
 
 
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
 typeof SuppressedError === "function" ? SuppressedError : function (error, suppressed, message) {
     var e = new Error(message);
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
+
+var jsxRuntime = {exports: {}};
 
 var reactJsxRuntime_production_min = {};
 
@@ -4169,8 +4194,42 @@ function requireReactJsxRuntime_development () {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  requireReactJsxRuntime_production_min();
+  jsxRuntime.exports = requireReactJsxRuntime_production_min();
 } else {
-  requireReactJsxRuntime_development();
+  jsxRuntime.exports = requireReactJsxRuntime_development();
 }
+
+var jsxRuntimeExports = jsxRuntime.exports;
+
+var buttonDefaultStyles = {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContents: "center",
+    border: "none",
+    borderRadius: "4px",
+};
+var buttonSizes = {
+    small: {
+        height: "28px",
+        fontSize: "14px",
+        padding: "3px 16px",
+    },
+    medium: {
+        height: "36px",
+        fontSize: "16px",
+        padding: "4px 20px",
+    },
+    large: {
+        height: "48px",
+        fontSize: "20px",
+        padding: "5px 24px",
+    },
+};
+var MyButton = function (props) {
+    var children = props.children, _a = props.size, size = _a === void 0 ? "medium" : _a, rest = __rest(props, ["children", "size"]);
+    var buttonStyles = __assign(__assign(__assign({}, rest.style), buttonDefaultStyles), buttonSizes[size]);
+    return (jsxRuntimeExports.jsx("button", __assign({ style: buttonStyles }, rest, { children: children })));
+};
+
+exports.MyButton = MyButton;
 //# sourceMappingURL=index.js.map

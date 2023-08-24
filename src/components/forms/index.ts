@@ -1,2 +1,2 @@
-export { default as Button } from "./Buttons";
-export * from "./Button.types";
+export { default as MyButton } from "./Buttons";
+export * from "./Buttons.types";
